@@ -1,0 +1,389 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.03.19 14:06:13 =~=~=~=~=~=~=~=~=~=~=~=
+screen -S git
+eltex-pg1-v15@eltex-2026-spring:~$ ssh root!@@172.16.9.168
+ssh: connect to host 172.16.9.168 port 22: No route to host
+eltex-pg1-v15@eltex-2026-spring:~$ ssh root@172.16.9.16889
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-55-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Mar 19 07:06:46 AM UTC 2026
+
+  System load:  0.0                Processes:              113
+  Usage of /:   41.3% of 14.66GB   Users logged in:        1
+  Memory usage: 11%                IPv4 address for ens18: 172.16.9.189
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+85 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Tue Mar 17 10:54:24 2026 from 172.16.8.4
+root@eltex-practice2-pg1-v15:~# git --version
+git version 2.43.0
+root@eltex-practice2-pg1-v15:~# git config --global user.name TTpe,mbep
+root@eltex-practice2-pg1-v15:~# git config --global user.maiul mega1twixW@gmail.co m
+root@eltex-practice2-pg1-v15:~# git config --global init.defaultBranch main
+root@eltex-practice2-pg1-v15:~# git config --list
+user.name=TTpembep
+user.mail=mega1twix@gmail.com
+init.defaultbranch=main
+root@eltex-practice2-pg1-v15:~# apt update
+0% [Working]            Hit:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+0% [Waiting for headers]0% [Waiting for headers] [Waiting for headers]                                              Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+0% [2 InRelease 11.8 kB/126 kB 9%] [Waiting for headers]                                                        Get:3 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+0% [2 InRelease 11.8 kB/126 kB 9%] [3 InRelease 6,932 B/126 kB 5%]                                                                  0% [3 InRelease 14.2 kB/126 kB 11%]0% [Waiting for headers] [3 InRelease 14.2 kB/126 kB 11%]                                                         Get:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+0% [4 InRelease 4,096 B/126 kB 3%] [3 InRelease 14.2 kB/126 kB 11%]                                                                   0% [3 InRelease 14.2 kB/126 kB 11%]0% [Waiting for headers] [3 InRelease 20.0 kB/126 kB 16%]                                                         Get:5 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,839 kB]
+0% [5 Packages 34.7 kB/1,839 kB 2%] [3 InRelease 28.7 kB/126 kB 23%]                                                                    Get:6 http://ru.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [338 kB]
+0% [6 Translation-en 338 kB/338 kB 100%] [3 InRelease 54.7 kB/126 kB 43%]                                                                         Get:7 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [177 kB]
+                                                                         Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+                                                                         Get:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,567 kB]
+                                                                         0% [9 Packages 302 kB/1,567 kB 19%] [3 InRelease 54.7 kB/126 kB 43%]0% [5 Packages store 0 B] [9 Packages 302 kB/1,567 kB 19%] [3 InRelease 54.7 kB                                                                               0% [5 Packages store 0 B] [3 InRelease 54.7 kB/126 kB 43%]                                                          Get:10 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [386 kB]
+0% [5 Packages store 0 B] [10 Components-amd64 18.7 kB/386 kB 5%] [3 InRelease                                                                                0% [5 Packages store 0 B] [3 InRelease 54.7 kB/126 kB 43%]                                                          Get:11 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+0% [5 Packages store 0 B] [11 Components-amd64 940 B/940 B 100%] [3 InRelease 50% [5 Packages store 0 B] [Waiting for headers] [3 InRelease 54.7 kB/126 kB 43%                                                                               Get:12 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7,368 B]
+0% [5 Packages store 0 B] [12 Components-amd64 7,368 B/7,368 B 100%] [3 InRelea0% [5 Packages store 0 B] [Waiting for headers] [3 InRelease 54.7 kB/126 kB 43%                                                                               Get:13 http://ru.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+0% [5 Packages store 0 B] [13 Components-amd64 216 B/216 B 100%] [3 InRelease 50% [5 Packages store 0 B] [Waiting for headers] [3 InRelease 54.7 kB/126 kB 43%                                                                               Get:14 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [13.2 kB]
+0% [5 Packages store 0 B] [14 Components-amd64 13.1 kB/13.2 kB 100%] [3 InRelea                                                                               0% [14 Components-amd64 13.1 kB/13.2 kB 100%] [3 InRelease 54.7 kB/126 kB 43%]0% [6 Translation-en store 0 B] [14 Components-amd64 13.1 kB/13.2 kB 100%] [3 I                                                                               Get:15 http://ru.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+                                                                               0% [6 Translation-en store 0 B] [3 InRelease 54.7 kB/126 kB 43%]                                                                0% [3 InRelease 54.7 kB/126 kB 43%]0% [7 Components-amd64 store 0 B] [3 InRelease 54.7 kB/126 kB 43%]                                                                  0% [7 Components-amd64 store 0 B]                                 0% [Working]0% [Working]0% [9 Packages store 0 B]96% [9 Packages store 0 B]                          96% [Waiting for headers]96% [10 Components-amd64 store 0 B] [Waiting for headers]                                                         96% [Waiting for headers]96% [Waiting for headers]96% [12 Components-amd64 store 0 B] [Waiting for headers]                                                         97% [Waiting for headers]97% [Waiting for headers]97% [14 Components-amd64 store 0 B] [Waiting for headers]                                                         97% [Waiting for headers]97% [Waiting for headers]                         Get:16 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+97% [16 Components-amd64 2,659 B/21.6 kB 12%]                                             97% [Working]97% [16 Components-amd64 store 0 B]                                   97% [Waiting for headers]                         Get:17 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [10.7 kB]
+98% [17 Commands-amd64 2,659 B/10.7 kB 25%]                                           98% [Working]             Get:18 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+98% [Waiting for headers]98% [17 Commands-amd64 store 0 B] [Waiting for headers]                                                       98% [Waiting for headers]98% [18 Components-amd64 store 0 B] [Waiting for headers]                                                         98% [Waiting for headers]                         Get:19 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [74.3 kB]
+98% [19 Components-amd64 2,892 B/74.3 kB 4%]                                            99% [Waiting for headers]                         Get:20 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [20.8 kB]
+99% [20 Commands-amd64 1,423 B/20.8 kB 7%]99% [19 Components-amd64 store 0 B] [20 Commands-amd64 1,423 B/20.8 kB 7%]                                                                          100% [20 Commands-amd64 10.1 kB/20.8 kB 49%]                                            100% [Waiting for headers]                          Get:21 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+                          100% [Working]100% [20 Commands-amd64 store 0 B]                                  100% [Working]100% [Working]              Fetched 4,834 kB in 2s (2,896 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 3%Reading package lists... 3%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 36%Reading package lists... 36%Reading package lists... 50%Reading package lists... 50%Reading package lists... 50%Reading package lists... 50%Reading package lists... 51%Reading package lists... 51%Reading package lists... 55%Reading package lists... 55%Reading package lists... 58%Reading package lists... 58%Reading package lists... 65%Reading package lists... 65%Reading package lists... 71%Reading package lists... 71%Reading package lists... 75%Reading package lists... 75%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 81%Reading package lists... 81%Reading package lists... 83%Reading package lists... 83%Reading package lists... 90%Reading package lists... 90%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+86 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@eltex-practice2-pg1-v15:~# apt install git gh
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+git set to manually installed.
+The following NEW packages will be installed:
+  gh
+0 upgraded, 1 newly installed, 0 to remove and 86 not upgraded.
+Need to get 8,836 kB of archives.
+After this operation, 45.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+0% [Working]            Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gh amd64 2.45.0-1ubuntu0.3 [8,836 kB]
+0% [1 gh 4,502 B/8,836 kB 0%]48% [1 gh 5,297 kB/8,836 kB 60%]                                100% [Working]              Fetched 8,836 kB in 1s (7,240 kB/s)
+
+Selecting previously unselected package gh.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125198 files and directories currently installed.)
+Preparing to unpack .../gh_2.45.0-1ubuntu0.3_amd64.deb ...
+Progress: [  0%] [..........................................................] Progress: [ 20%] [###########...............................................] Unpacking gh (2.45.0-1ubuntu0.3) ...
+Progress: [ 40%] [#######################...................................] Setting up gh (2.45.0-1ubuntu0.3) ...
+Progress: [ 60%] [##################################........................] Progress: [ 80%] [##############################################............] Processing triggers for man-db (2.12.0-4build2) ...
+
+Scanning processes... [                                                        ]Scanning processes... [                                                        ]Scanning processes... [                                                        ]Scanning processes... [=                                                       ]Scanning processes... [=                                                       ]Scanning processes... [==                                                      ]Scanning processes... [==                                                      ]Scanning processes... [===                                                     ]Scanning processes... [===                                                     ]Scanning processes... [====                                                    ]Scanning processes... [====                                                    ]Scanning processes... [=====                                                   ]Scanning processes... [=====                                                   ]Scanning processes... [======                                                  ]Scanning processes... [======                                                  ]Scanning processes... [=======                                                 ]Scanning processes... [=======                                                 ]Scanning processes... [========                                                ]Scanning processes... [========                                                ]Scanning processes... [=========                                               ]Scanning processes... [=========                                               ]Scanning processes... [==========                                              ]Scanning processes... [==========                                              ]Scanning processes... [===========                                             ]Scanning processes... [===========                                             ]Scanning processes... [============                                            ]Scanning processes... [============                                            ]Scanning processes... [=============                                           ]Scanning processes... [=============                                           ]Scanning processes... [==============                                          ]Scanning processes... [==============                                          ]Scanning processes... [===============                                         ]Scanning processes... [===============                                         ]Scanning processes... [================                                        ]Scanning processes... [================                                        ]Scanning processes... [=================                                       ]Scanning processes... [=================                                       ]Scanning processes... [==================                                      ]Scanning processes... [==================                                      ]Scanning processes... [==================                                      ]Scanning processes... [===================                                     ]Scanning processes... [===================                                     ]Scanning processes... [====================                                    ]Scanning processes... [====================                                    ]Scanning processes... [=====================                                   ]Scanning processes... [=====================                                   ]Scanning processes... [======================                                  ]Scanning processes... [======================                                  ]Scanning processes... [=======================                                 ]Scanning processes... [=======================                                 ]Scanning processes... [========================                                ]Scanning processes... [========================                                ]Scanning processes... [=========================                               ]Scanning processes... [=========================                               ]Scanning processes... [==========================                              ]Scanning processes... [==========================                              ]Scanning processes... [===========================                             ]Scanning processes... [===========================                             ]Scanning processes... [============================                            ]Scanning processes... [============================                            ]Scanning processes... [=============================                           ]Scanning processes... [=============================                           ]Scanning processes... [==============================                          ]Scanning processes... [==============================                          ]Scanning processes... [===============================                         ]Scanning processes... [===============================                         ]Scanning processes... [================================                        ]Scanning processes... [================================                        ]Scanning processes... [=================================                       ]Scanning processes... [=================================                       ]Scanning processes... [==================================                      ]Scanning processes... [==================================                      ]Scanning processes... [===================================                     ]Scanning processes... [===================================                     ]Scanning processes... [====================================                    ]Scanning processes... [====================================                    ]Scanning processes... [=====================================                   ]Scanning processes... [=====================================                   ]Scanning processes... [=====================================                   ]Scanning processes... [======================================                  ]Scanning processes... [======================================                  ]Scanning processes... [=======================================                 ]Scanning processes... [=======================================                 ]Scanning processes... [========================================                ]Scanning processes... [========================================                ]Scanning processes... [=========================================               ]Scanning processes... [=========================================               ]Scanning processes... [==========================================              ]Scanning processes... [==========================================              ]Scanning processes... [===========================================             ]Scanning processes... [===========================================             ]Scanning processes... [============================================            ]Scanning processes... [============================================            ]Scanning processes... [=============================================           ]Scanning processes... [=============================================           ]Scanning processes... [==============================================          ]Scanning processes... [==============================================          ]Scanning processes... [===============================================         ]Scanning processes... [===============================================         ]Scanning processes... [================================================        ]Scanning processes... [================================================        ]Scanning processes... [=================================================       ]Scanning processes... [=================================================       ]Scanning processes... [==================================================      ]Scanning processes... [==================================================      ]Scanning processes... [===================================================     ]Scanning processes... [===================================================     ]Scanning processes... [====================================================    ]Scanning processes... [====================================================    ]Scanning processes... [=====================================================   ]Scanning processes... [=====================================================   ]Scanning processes... [======================================================  ]Scanning processes... [======================================================  ]Scanning processes... [======================================================= ]Scanning processes... [======================================================= ]Scanning processes... [========================================================]Scanning processes...                                                           
+Scanning candidates... [                                                       ]Scanning candidates... [=============                                          ]Scanning candidates... [===========================                            ]Scanning candidates... [=========================================              ]Scanning candidates... [=======================================================]Scanning candidates...                                                          Scanning linux images... [                                                     ]Scanning linux images... [=============                                        ]Scanning linux images... [==========================                           ]Scanning linux images... [=======================================              ]Scanning linux images... [=====================================================]Scanning linux images...                                                        
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-55-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version
+6.8.0-106-generic.
+
+Restarting the system to load the new kernel will not be handled automatically,
+so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@eltex-practice2-pg1-v15:~# ssh-keygen -t ed25519 -f ~/.ssh/TTpembep
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/TTpembep
+Your public key has been saved in /root/.ssh/TTpembep.pub
+The key fingerprint is:
+SHA256:eE+QOjUgFPDS7qNwLwgUKMTkfbMSQIdRr/vyvp+ryy8 root@eltex-practice2-pg1-v15
+The key's randomart image is:
++--[ED25519 256]--+
+|**==+..          |
+|+++o.. . .       |
+|..ooo+  =        |
+| . o+ o+ o       |
+|.  o..+ S .      |
+|.  .o  o o       |
+|o...o     .      |
+|.o.+oE  .        |
+|  ..=OB=.        |
++----[SHA256]-----+
+
+root@eltex-practice2-pg1-v15:~# gh aith logh auth login
+? What account do you want to log into?  [Use arrows to move, type to filter]
+> GitHub.com
+  GitHub Enterprise Server
+
+
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host?  [Use arrows to move, type to filter]
+> HTTPS
+  SSH
+
+
+? What is your preferred protocol for Git operations on this host?  [Use arrows to move, type to filter]
+  HTTPS
+> SSH
+
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account?  [Use arrows to move, type to filter]
+> /root/.ssh/TTpembep.pub
+  Skip
+
+
+? Upload your SSH public key to your GitHub account? /root/.ssh/TTpembep.pub
+? Title for your SSH key: (GitHub CLI) eltex-practice-pg1-pv15
+? Title for your SSH key: eltex-practice-pg1-v15
+? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+> Login with a web browser
+  Paste an authentication token
+
+
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: AC48-B55B
+Press Enter to open github.com in your browser... 
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+ Configured git protocol
+! Authentication credentials saved in plain text
+ Uploaded the SSH key to your GitHub account: /root/.ssh/TTpembep.pub
+ Logged in as TTpembep
+root@eltex-practice2-pg1-v15:~# gh auth setup-git --hostname github/cc..co,m
+root@eltex-practice2-pg1-v15:~# gh auth status
+github.com
+   Logged in to github.com account TTpembep (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+
+root@eltex-practice2-pg1-v15:~# gh auth setup-git --hostname github.com
+root@eltex-practice2-pg1-v15:~# gh auth status
+github.comgi
+Logged in to github.com account TTpembep(/root/.config/gh/hosts.yml)  
+- Active account: true
+- Git operations protocol: ssh
+- Token: gho_************************************
+- Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+root@eltex-practice2-pg1-v15:~# gh repo create --public EltexCourse26
+ Created repository TTpembep/EltexCourse26 on GitHub
+  https://github.com/TTpembep/EltexCourse26
+root@eltex-practice2-pg1-v15:~# mkdir ~/EltexCourse26 && cd ~/eltexCEltecxCourse26
+root@eltex-practice2-pg1-v15:~/EltexCourse26# echo "$#__ root@eltex-practice2-pg1-v15:~/EltexCourse26# echo "#__
+root@eltex-practice2-pg1-v15:~/EltexCourse26# echo "#__
+root@eltex-practice2-pg1-v15:~/EltexCourse26# echo "#repo for tracking            course complition" >> README.md
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git init
+Initialized empty Git repository in /root/EltexCourse26/.git/
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git add README.md
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git commit -m "Initialized repo for course"\
+[main (root-commit) 9c67569] Initialized repo for course
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git branch -M main
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git remote add origin https://github.com/tytTTpembep/EltexCourse26
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git status
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects:  33% (1/3)Counting objects:  66% (2/3)Counting objects: 100% (3/3)Counting objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 261 bytes | 261.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/TTpembep/EltexCourse26
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+root@eltex-practice2-pg1-v15:~/EltexCourse26# mkdir -p Module1/task1
+root@eltex-practice2-pg1-v15:~/EltexCourse26# mkdir module1/task2
+mkdir: cannot create directory module1/task2: No such file or directory
+root@eltex-practice2-pg1-v15:~/EltexCourse26# ls
+Module1  README.md
+root@eltex-practice2-pg1-v15:~/EltexCourse26# mkdir Module1/task2
+root@eltex-practice2-pg1-v15:~/EltexCourse26# mkdir Module1/task3
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git branch -M main
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git remote add origin https://github.com/TTpembep/EltexCourse26
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git status
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 261 bytes | 261.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/TTpembep/EltexCourse26T
+* [new branch]main -> main
+branch 'main' set up to track 'origin/main'.
+root@eltex-practice2-pg1-v15:~/EltexCourse26# pwd
+/root/EltexCourse26
+root@eltex-practice2-pg1-v15:~/EltexCourse26# cd Module1/task1/
+root@eltex-practice2-pg1-v15:~/EltexCourse26/Module1/task1# ls
+eltex-pg1-v15_part1.log
+root@eltex-practice2-pg1-v15:~/EltexCourse26/Module1/task1# cd ..
+root@eltex-practice2-pg1-v15:~/EltexCourse26/Module1# cd ..
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git add .
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+new file:   Module1/task1/eltex-pg1-v15_part1.log
+
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git commit "adeded firtsst log  .log file" root@eltex-practice2-pg1-v15:~/EltexCourse26# git commit "added first .log file"
+error: pathspec 'added first .log file' did not match any file(s) known to git
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git commgit commit "added first .log file" root@eltex-practice2-pg1-v15:~/EltexCourse26# git commit "added first .log fileit  "added first .log file"oot@eltex-practice2-pg1-v15:~/EltexCourse26# git commit - "added first .log file"ot@eltex-practice2-pg1-v15:~/EltexCourse26# git commit -m "added first .log file"t@eltex-practice2-pg1-v15:~/EltexCourse26# git commit -m
+
+[main abd5220] added first .log file
+ 1 file changed, 263 insertions(+)
+ create mode 100644 Module1/task1/eltex-pg1-v15_part1.log
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git push
+Enumerating objects: 6, done.
+Counting objects:  16% (1/6)Counting objects:  33% (2/6)Counting objects:  50% (3/6)Counting objects:  66% (4/6)Counting objects:  83% (5/6)Counting objects: 100% (6/6)Counting objects: 100% (6/6), done.
+Delta compression using up to 2 threads
+Compressing objects:  25% (1/4)Compressing objects:  50% (2/4)Compressing objects:  75% (3/4)Compressing objects: 100% (4/4)Compressing objects: 100% (4/4), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 2.28 KiB | 2.28 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/TTpembep/EltexCourse26
+   9c67569..abd5220  main -> main
+root@eltex-practice2-pg1-v15:~/EltexCourse26# cd ..
+root@eltex-practice2-pg1-v15:~# mkdir ~/EltexCourse26_clone && cd ~/EltexCoyuurse2 6)clo_clone
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# git clone https://github.com /TTpembep/EltexCourse26.
+Cloning into 'EltexCourse26.'...
+remote: Repository not found.
+fatal: repository 'https://github.com/TTpembep/EltexCourse26./' not found
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# git clone https://github.com/TTpembep/EltexCourse26.
+Cloning into 'EltexCourse26'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects:  12% (1/8)remote: Counting objects:  25% (2/8)remote: Counting objects:  37% (3/8)remote: Counting objects:  50% (4/8)remote: Counting objects:  62% (5/8)remote: Counting objects:  75% (6/8)remote: Counting objects:  87% (7/8)remote: Counting objects: 100% (8/8)remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects:  20% (1/5)remote: Compressing objects:  40% (2/5)remote: Compressing objects:  60% (3/5)remote: Compressing objects:  80% (4/5)remote: Compressing objects: 100% (5/5)remote: Compressing objects: 100% (5/5), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0 (from 0)
+Receiving objects:  12% (1/8)Receiving objects:  25% (2/8)Receiving objects:  37% (3/8)Receiving objects:  50% (4/8)Receiving objects:  62% (5/8)Receiving objects:  75% (6/8)Receiving objects:  87% (7/8)Receiving objects: 100% (8/8)Receiving objects: 100% (8/8), done.
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# ;sls
+EltexCourse26
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# nb!
+Command 'nb!' not found, did you mean:
+  command 'nbc' from deb nbc (1.2.1.r4+dfsg-11)
+Try: apt install <deb name>
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# cd eEltexCourse26/
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# ls
+Module1  README.md
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# cd ..
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# cd ..
+root@eltex-practice2-pg1-v15:~# cd EletexCourse26
+root@eltex-practice2-pg1-v15:~/EltexCourse26# cd Module1/git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+Module1/task2/
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@eltex-practice2-pg1-v15:~/EltexCourse26# cd moModule1/task12/
+root@eltex-practice2-pg1-v15:~/EltexCourse26/Module1/task2# ls
+practice2_eltex-pg1-v15_part1.log
+root@eltex-practice2-pg1-v15:~/EltexCourse26/Module1/task2# cd ..
+root@eltex-practice2-pg1-v15:~/EltexCourse26/Module1# cd ..
+root@eltex-practice2-pg1-v15:~/EltexCourse26# Gigit add. .
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git commit -m "added log for second pracitece ctice of modilule 1foror module1":1"
+[main d614265] added log for second practice for module1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Module1/task2/practice2_eltex-pg1-v15_part1.log
+root@eltex-practice2-pg1-v15:~/EltexCourse26# git push
+Enumerating objects: 7, done.
+Counting objects:  14% (1/7)Counting objects:  28% (2/7)Counting objects:  42% (3/7)Counting objects:  57% (4/7)Counting objects:  71% (5/7)Counting objects:  85% (6/7)Counting objects: 100% (7/7)Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects:  25% (1/4)Compressing objects:  50% (2/4)Compressing objects:  75% (3/4)Compressing objects: 100% (4/4)Compressing objects: 100% (4/4), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 431 bytes | 431.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/TTpembep/EltexCourse26
+   abd5220..d614265  main -> main
+root@eltex-practice2-pg1-v15:~/EltexCourse26# cd ..
+root@eltex-practice2-pg1-v15:~# cd eEltexCourse26_clone/
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone# cd EltexCourse26/
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# git sttatus
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# git fetch
+remote: Enumerating objects: 7, done.
+remote: Counting objects:  14% (1/7)remote: Counting objects:  28% (2/7)remote: Counting objects:  42% (3/7)remote: Counting objects:  57% (4/7)remote: Counting objects:  71% (5/7)remote: Counting objects:  85% (6/7)remote: Counting objects: 100% (7/7)remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects:  25% (1/4)remote: Compressing objects:  50% (2/4)remote: Compressing objects:  75% (3/4)remote: Compressing objects: 100% (4/4)remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0 (from 0)
+Unpacking objects:  20% (1/5)Unpacking objects:  40% (2/5)Unpacking objects:  60% (3/5)Unpacking objects:  80% (4/5)Unpacking objects: 100% (5/5)Unpacking objects: 100% (5/5), 411 bytes | 411.00 KiB/s, done.
+From https://github.com/TTpembep/EltexCourse26
+   abd5220..d614265  main       -> origin/main
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# cd Module1/tas k1/2/
+-bash: cd: Module1/task2/: No such file or directory
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# ls
+Module1  README.md
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# cd Module1/
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26/Module1# cdls
+task1
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26/Module1# cd ,,..
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# git fetch
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# git log orgigin .main/main
+commit d614265090c74ecb6bdfea3e82db05beda063c61 (origin/main, origin/HEAD)
+Author: TTpembep <mega1twix@gmail.com>
+Date:   Thu Mar 19 08:16:43 2026 +0000
+
+    added log for second practice for module1
+
+commit abd5220875b0a3c9d4be45274e054fc2c8e95d18 (HEAD -> main)
+Author: TTpembep <mega1twix@gmail.com>
+Date:   Thu Mar 19 08:10:15 2026 +0000
+
+    added first .log file
+
+commit 9c675699297989cefad5491aa2fd440415e41ad6
+Author: TTpembep <mega1twix@gmail.com>
+Date:   Thu Mar 19 07:33:45 2026 +0000
+
+    Initialized repo for course
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# git diff main  originj/main
+diff --git a/Module1/task2/practice2_eltex-pg1-v15_part1.log b/Module1/task2/pra ctice2_eltex-pg1-v15_part1.log
+new file mode 100644
+index 0000000..e69de29
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# git merge
+Updating abd5220..d614265
+Fast-forward
+ Module1/task2/practice2_eltex-pg1-v15_part1.log | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Module1/task2/practice2_eltex-pg1-v15_part1.log
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26# cd mModule1/Ttas k2/
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26/Module1/task2#  ls
+practice2_eltex-pg1-v15_part1.log
+root@eltex-practice2-pg1-v15:~/EltexCourse26_clone/EltexCourse26/Module1/task2#  cd ~
+root@eltex-practice2-pg1-v15:~# 
