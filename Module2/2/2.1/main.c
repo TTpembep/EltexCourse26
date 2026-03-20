@@ -4,26 +4,37 @@
 int main(){
     printf("-= Welcome to PhoneBook console =-\n");
 
-    Contact phonebook[10];
-    int i = 0;
-    Contact one = phonebook[i];
+    Contact phonebook[10], *ptr;
 
-    int option = 1;
+    int index = 0;
+    short option = 1;
+    short result;
     while (option !=0){
+
+        //Прежде чем назначать новый индекс нужно проверить что массив не переполнен, если что его перевыделить память
+        ptr = &phonebook[index];
+
         printf("Choose an option:\n");
         printf("1. Add contact\n2. Edit contact\n3. Delete contact\n4. Print phonebook\n0. Exit\n");
 
-        scanf("%d", &option);
-        short result;
+        scanf("%hd", &option); //Раньше здесь был %d и из-за этого затирался первый номер в структуре
+        while(getchar() != '\n');   //Очистка буфера потока ввода после scanf
+
         switch(option)
         {
             case 1:
-                result = addContact(&one);
-                if (result == 0) {printf("Operation done successfully!\n");}
+                result = addContact(ptr);
+                if (result == 0) {
+                    //printf("Debug phone: %s \n", ptr->phoneNumber);
+                    //printf("Debug name: %s \n", ptr->name);
+                    //printf("Debug surname: %s \n", ptr->surname);
+                    //printf("Debug job: %s \n", ptr->job);
+                    //printf("Debug email: %s \n", ptr->email);
+                    index++;
+                    printf("Operation done successfully!\n");
+                }
                 else {printf("Someting went wrong.\n");}
-                printf("Debug: %s \n", one.phoneNumber);
-                printf("Debug: %s \n", one.job);
-                printf("Debug: %s \n", one.email);
+                
                 break;
             case 2:
                 result = editContact();
@@ -36,12 +47,13 @@ int main(){
                 else {printf("Someting went wrong.\n");}
                 break;
             case 4:
-                result = printContact();
+                result = printPhonebook(&phonebook[0], index);
+                //result = printContact(phonebook[index]);
                 if (result == 0) {printf("Operation done successfully!\n");}
                 else {printf("Someting went wrong.\n");}
                 break;
             default:
-                option =0;
+                option = 0;
         }
     }
     return 0;

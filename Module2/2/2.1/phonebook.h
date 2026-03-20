@@ -13,9 +13,10 @@ typedef struct {
     char email[30];
 } Contact;
 
-short addContact(Contact* one);
+short addContact(Contact* ptr);
 short editContact(void);
 short deleteContact(void);
-short printContact(void);
+short printContact(Contact *index, const int id);
+short printPhonebook(Contact *phonebook, int length);
 
 #endif /* PHONEBOOK_H_ */
