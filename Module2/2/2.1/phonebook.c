@@ -47,6 +47,8 @@ short deleteContact(void){
     return 0;
 }
 
+// Возможно вывод стоит вывести в отдельный заголовочный файл
+// Чтобы не смешивать с логикой взаимодействия с данными
 short printContact(Contact *index, const int id){
     printf("-=Information about contact with ID:%d =-\n", id);
     printf("phone: %s \t", index->phoneNumber);
