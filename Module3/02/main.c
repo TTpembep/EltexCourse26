@@ -2,7 +2,7 @@
 #include <stdlib.h> //for exit(1)
 #include <sys/wait.h>   //for wait()
 #include <string.h> //for str functions
-#include <unistd.h> //for fork(), exec(), getpid()
+#include <unistd.h> //for fork(), exec()
 
 #define MAX_LENGTH 256
 #define MAX_ARGS 16
@@ -33,7 +33,7 @@ int main(){
         pid_t pid = fork(); //Создание дочернего процесса
         if (pid < 0) {  //Обработка ошибки создания дочернего процесса
             printf("fork error\n");
-            break;
+            continue;
         }else if (pid == 0){//Логика дочернего процесса         
             execv(args[0], args);  //Замена образа процесса из текущего каталога
             execvp(args[0], args);  //Замена образа процесса, поиск команды в PATH
