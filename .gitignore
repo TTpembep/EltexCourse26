@@ -1,3 +1,9 @@
+#Ingore all
+*
+#Unignore all with extensions
+!*.*
+#Unignore all catalogues
+!*/
 *.doc
 *.docx
 *.exe
