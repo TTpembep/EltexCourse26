@@ -20,9 +20,9 @@
 	Task 6.3 - Untracked ⏰
 ## Module 3
 	Task 1 - Done ✅
-	Task 2 - In progress 📋
+	Task 2 - Done ✅
 	Task 3 - Untracked ⏰
-	Task 4 - Untracked ⏰
+	Task 4 - In progress 📋
 	Task 5 - Untracked ⏰
 	Task 6 - Untracked ⏰
 	Task 7 - Untracked ⏰
