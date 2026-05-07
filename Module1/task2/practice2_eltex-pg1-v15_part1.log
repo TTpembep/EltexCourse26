@@ -1,0 +1,175 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.03.17 17:29:18 =~=~=~=~=~=~=~=~=~=~=~=
+screen -S work
+
+eltex-pg1-v15@eltex-2026-spring:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/eltex-pg1-v15/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/eltex-pg1-v15/.ssh/id_rsa
+Your public key has been saved in /home/eltex-pg1-v15/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:qKjD2YxZjn8b0tGkNafg2s23bE6qP2PVp+K92OLqb14 eltex-pg1-v15@eltex-2026-spring
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|                 |
+|     . + .       |
+|    . *.+        |
+|     +.oS .      |
+|   o+.+  . . .   |
+|. @o.+ o.o Eo    |
+|.B +...+==*.     |
+|.....o*=%Xo+.    |
++----[SHA256]-----+
+eltex-pg1-v15@eltex-2026-spring:~$ ssh-copy-id -i ~/.ssh/id_rsa root@172.16.9.18 9
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/eltex-pg1-v15/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@172.16.9.189's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'root@172.16.9.189'"
+and check to make sure that only the key(s) you wanted were added.
+
+eltex-pg1-v15@eltex-2026-spring:~$ ssh root@172.16.9.189
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-55-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Mar 17 10:35:43 AM UTC 2026
+
+  System load:  0.0                Processes:              111
+  Usage of /:   41.2% of 14.66GB   Users logged in:        0
+  Memory usage: 10%                IPv4 address for ens18: 172.16.9.189
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+94 updates can be applied immediately.
+7 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Mar 12 12:13:15 2026 from 172.16.8.4
+
+root@eltex-practice2-pg1-v15:~# 
+root@eltex-practice2-pg1-v15:~# cat !~/.ssh/authprorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQChu3lILIFc1c+sfj8CDdXq0xDXyQSCzTwNaUpVzN24DY0y1UOLWmawFR5rBJukftJMeoCSH5tyxDaxIT/3Blf8xs0uJJW/B9TdaOywOkHnsT3+eAJ4qgz5X9ouadk70TSM1x5HQE/+cIniRc2sjXAhbl8OJsMwYzMhzXPeFjk8H3leCH10T/hVa5mSWUN6O3Sx7lgjMEjd/frTDW9rhN7zwYl5p5ar3Dz7aDLKyAFhn5DGV3i4pyfCSGbjCp5X8Zz7zrwzGMg8nmPkxHvNCJldGRsndEgSmghHBW4pwH4baUOnqstP6i4QInrCT/REAUsZ5wyuE4ZDATkRmYDODseTJQB+a0WLeCwbJGSBIAwfKjYzFJmKWgnFQxc32G9QMkCYFOSKBy+z12cSn1F+Y+eAFsbcuAmu33N2+1yVQ8lr42DKpqdlZPGNFiCKiEAQzxU1HsxjvTZBbEoZ27lzS4FKuHVH/VFIJRQmP1Ddj1nG45ZY2ZkQGYH3gWazL9roWt0= eltex-pg1-v15@eltex-2026-spring
+root@eltex-practice2-pg1-v15:~# echo "Keys are equal on both machines"
+
+Keys are equal on both machines
+
+
+root@eltex-practice2-pg1-v15:~# useradd --home-dir --shell /bin/bash user1
+useradd: invalid home directory '--shell'
+root@eltex-practice2-pg1-v15:~# useradd --home-dir /home_user1 --shell /bin/bash  user1
+root@eltex-practice2-pg1-v15:~# su user1
+user1@eltex-practice2-pg1-v15:/root$ su ruoot
+Password: 
+root@eltex-practice2-pg1-v15:~# passwd user1
+New password: 
+Retype new password: 
+passwd: password updated successfully
+root@eltex-practice2-pg1-v15:~# adduser user2
+info: Adding user `user2' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user2' (1002) ...
+info: Adding new user `user2' (1002) with group `user2 (1002)' ...
+info: Creating home directory `/home/user2' ...
+info: Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+Full Name []: John Doe
+Room Number []: 715
+Work Phone []: None
+Home Phone []: Yes
+Other []: No
+Is the information correct? [Y/n] Y
+info: Adding new user `user2' to supplemental / extra groups `users' ...
+info: Adding user `user2' to group `users' ...
+root@eltex-practice2-pg1-v15:~# adduser user3
+info: Adding user `user3' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user3' (1003) ...
+info: Adding new user `user3' (1003) with group `user3 (1003)' ...
+info: Creating home directory `/home/user3' ...
+info: Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user3
+Enter the new value, or press ENTER for the default
+Full Name []: 
+Room Number []: 
+Work Phone []: 
+Home Phone []: 
+Other []: 
+Is the information correct? [Y/n] Y
+info: Adding new user `user3' to supplemental / extra groups `users' ...
+info: Adding user `user3' to group `users' ...
+root@eltex-practice2-pg1-v15:~# usermod --shell /usr/sbin/nologin user3
+root@eltex-practice2-pg1-v15:~# su user3
+This account is currently not available.
+root@eltex-practice2-pg1-v15:~# su --shell=/bin/bash user3
+user3@eltex-practice2-pg1-v15:/root$ logout
+bash: logout: not login shell: use `exit'
+user3@eltex-practice2-pg1-v15:/root$ exit
+exit
+root@eltex-practice2-pg1-v15:~# groups user{1..3}
+user1 : user1
+user2 : user2 users
+user3 : user3 users
+
+root@eltex-practice2-pg1-v15:~# usermod -aG newGroup user1
+root@eltex-practice2-pg1-v15:~# usermod -aG newGroup user2
+root@eltex-practice2-pg1-v15:~# usermod -aG newGroup user3
+root@eltex-practice2-pg1-v15:~# groups user{1..3}
+user1 : user1 newGroup
+user2 : user2 users newGroup
+user3 : user3 users newGroup
+root@eltex-practice2-pg1-v15:~# mkdir /opt/share
+root@eltex-practice2-pg1-v15:~# ls -l /opt/
+total 4
+drwxr-xr-x 2 root root 4096 Mar 17 11:11 share
+root@eltex-practice2-pg1-v15:~# chgrp newGroup /opt/share
+root@eltex-practice2-pg1-v15:~# ls -l /opt
+total 4
+drwxr-xr-x 2 root newGroup 4096 Mar 17 11:11 share
+root@eltex-practice2-pg1-v15:~# chmod 775 /opt/share
+root@eltex-practice2-pg1-v15:~# ls -l /opt
+total 4
+drwxrwxr-x 2 root newGroup 4096 Mar 17 11:11 share
+root@eltex-practice2-pg1-v15:~# chmod g+s /opt/share
+root@eltex-practice2-pg1-v15:~# ls -l /opt
+total 4
+drwxrwsr-x 2 root newGroup 4096 Mar 17 11:11 share
+
+root@eltex-practice2-pg1-v15:~# su user1
+user1@eltex-practice2-pg1-v15:/root$ umskask
+user1@eltex-practice2-pg1-v15:/root$ umask -p
+umask 0002
+user1@eltex-practice2-pg1-v15:/root$ umask -S
+u=rwx,g=rwx,o=rx
+user1@eltex-practice2-pg1-v15:/root$ umask u=rwx,g=rwsxx,o=
+user1@eltex-practice2-pg1-v15:/root$ umask -p
+umask 0007
+user1@eltex-practice2-pg1-v15:/root$ umask -PS
+u=rwx,g=rwx,o=
+
+

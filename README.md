@@ -23,7 +23,7 @@
 	Task 2 - Done ✅
 	Task 3 - Untracked ⏰
 	Task 4 - In progress 📋
-	Task 5 - Untracked ⏰
+	Task 5 - Done ✅
 	Task 6 - Untracked ⏰
 	Task 7 - Untracked ⏰
 	Task 8 - Untracked ⏰
@@ -37,3 +37,15 @@
 	
 	Cross-task 1 - Untracked ⏰
 	Cross-task 2 - Untracked ⏰
+## Module 4
+	Task 1 - Untracked ⏰
+	Task 2 - Untracked ⏰
+	Task 3 - Untracked ⏰
+	Task 4 - Untracked ⏰
+	Task 5 - Untracked ⏰
+## Module 5
+	Task 1 - Untracked ⏰
+	Task 2 - Untracked ⏰
+	Task 3 - Untracked ⏰
+	Task 4 - Untracked ⏰
+	Task 5 - Untracked ⏰
