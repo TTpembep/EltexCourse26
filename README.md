@@ -44,7 +44,7 @@
 	Task 4 - Untracked ⏰
 	Task 5 - Untracked ⏰
 ## Module 5
-	Task 1 - Untracked ⏰
+	Task 1 - Done ✅
 	Task 2 - Untracked ⏰
 	Task 3 - Untracked ⏰
 	Task 4 - Untracked ⏰
