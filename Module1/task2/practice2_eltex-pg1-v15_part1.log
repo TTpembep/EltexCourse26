@@ -172,4 +172,245 @@ umask 0007
 user1@eltex-practice2-pg1-v15:/root$ umask -PS
 u=rwx,g=rwx,o=
 
+root@eltex-practice2-pg1-v15:~# su user1
+user1@eltex-practice2-pg1-v15:/root$ touch /opt/share/user1File
+user1@eltex-practice2-pg1-v15:/root$ exit
+exit
+root@eltex-practice2-pg1-v15:~# su user2
+user2@eltex-practice2-pg1-v15:/root$ touch /opt/share/user2File
+user2@eltex-practice2-pg1-v15:/root$ rm /opt/share/user1File
+user2@eltex-practice2-pg1-v15:/root$ ls /opt/share/
+user2File
+user2@eltex-practice2-pg1-v15:/root$ exit
+exit
+root@eltex-practice2-pg1-v15:~# su user3
+user3@eltex-practice2-pg1-v15:/root$ touch /opt/share/user3File
+user3@eltex-practice2-pg1-v15:/root$ rm /opt/share/user2File
+user3@eltex-practice2-pg1-v15:/root$ ls /opt/share
+user3File
+user3@eltex-practice2-pg1-v15:/root$ exit
+exit
+root@eltex-practice2-pg1-v15:~# su user1
+user1@eltex-practice2-pg1-v15:/root$ rm /opt/share/user3File
+user1@eltex-practice2-pg1-v15:/root$ ls /opt/share/
+user1@eltex-practice2-pg1-v15:/root$ exit
+exit
 
+root@eltex-practice2-pg1-v15:~# ls -ld /opt/share
+drwxrwsr-x 2 root newGroup 4096 Apr 28 09:31 /opt/share
+root@eltex-practice2-pg1-v15:~# chmod +t /opt/share
+root@eltex-practice2-pg1-v15:~# ls -ld /opt/share
+drwxrwsr-t 2 root newGroup 4096 Apr 28 09:31 /opt/share
+root@eltex-practice2-pg1-v15:~# su user1
+user1@eltex-practice2-pg1-v15:/root$ touch /opt/share/user1File
+user1@eltex-practice2-pg1-v15:/root$ exit
+exit
+root@eltex-practice2-pg1-v15:~# su user2
+user2@eltex-practice2-pg1-v15:/root$ rm /opt/share/user1File
+rm: cannot remove '/opt/share/user1File': Operation not permitted
+user2@eltex-practice2-pg1-v15:/root$ ls /opt/share/
+user1File
+
+root@eltex-practice2-pg1-v15:~# visudo
+root@eltex-practice2-pg1-v15:~# echo "Added in the end of file: user1 ALL=(root) NOPASSWD: /bin/dmesg"
+Added in the end of file: user1 ALL=(root) NOPASSWD: /bin/dmesg
+root@eltex-practice2-pg1-v15:~# su user1
+user1@eltex-practice2-pg1-v15:/root$ dmesg | tail -1
+dmesg: read kernel buffer failed: Operation not permitted
+user1@eltex-practice2-pg1-v15:/root$ sudo dmesg | tail -1
+[383950.768137] systemd-journald[307]: /var/log/journal/560b026a44d3424ea490d29e1a7e2775/user-1003.journal: Journal file uses a different sequence number ID, rotating.
+user1@eltex-practice2-pg1-v15:/root$ exit
+
+root@eltex-practice2-pg1-v15:~# touch freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# vi freeDmsg.sh
+#!/bin/bash
+dmesg
+"freeDmsg.sh" 2L, 18B written
+root@eltex-practice2-pg1-v15:~# cat freeDmsg.sh
+#!/bin/bash
+dmesg
+root@eltex-practice2-pg1-v15:~# ls -lh freeDmsg.sh
+-rw-r--r-- 1 root root 18 May  9 08:53 freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# chown user2 freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# chmod 4701 freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# ls -lh freeDmsg.sh
+-rws------ 1 user2 root 18 May  9 08:53 freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# mv freeDmsg.sh /home/user2/freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# chown root /home/user2/freeDmsg.sh
+root@eltex-practice2-pg1-v15:~# su user2
+user2@eltex-practice2-pg1-v15:/root$ cd ~
+user2@eltex-practice2-pg1-v15:~$ ls -lh
+total 4.0K
+-rws-----x 1 root root 18 May  9 08:53 freeDmsg.sh
+user2@eltex-practice2-pg1-v15:~$ ./freeDmsg.sh
+/bin/bash: ./freeDmsg.sh: Permission denied
+Ядро не позволяет запускать shell-скрипты с установленным SUID, так как это не безопасно. Лучше выдать доступ к команде с помощью настройки sudoers.
+Можно обойти это ограничение если запускать скрипт не на прямую, а через Си-обёртку.
+
+
+root@eltex-practice2-pg1-v15:~# for user in user{1..3}; do chage -l $user | grep Maximum; done
+Maximum number of days between password change          : 99999
+Maximum number of days between password change          : 99999
+Maximum number of days between password change          : 99999
+root@eltex-practice2-pg1-v15:~# for user in user{1..3}; do chage -M 10 $user; done
+root@eltex-practice2-pg1-v15:~# for user in user{1..3}; do chage -l $user | grep Maximum; done
+Maximum number of days between password change          : 10
+Maximum number of days between password change          : 10
+Maximum number of days between password change          : 10
+
+
+root@eltex-practice2-pg1-v15:~# vi /etc/motd
+Приветственное сообщение дня!
+Автор: Болдырев Денис.
+"/etc/motd" [New] 2L, 97B written
+root@eltex-practice2-pg1-v15:~# exit
+logout
+Connection to 172.16.9.189 closed.
+eltex-pg1-v15@eltex-2026-spring:~$ ssh root@172.16.9.189
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-110-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat May  9 10:23:12 AM UTC 2026
+
+  System load:  0.01               Processes:              110
+  Usage of /:   42.6% of 14.66GB   Users logged in:        0
+  Memory usage: 10%                IPv4 address for ens18: 172.16.9.189
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+84 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+*** System restart required ***
+Приветственное сообщение дня!
+Автор: Болдырев Денис.
+Last login: Sat May  9 10:05:01 2026 from 172.16.8.4
+root@eltex-practice2-pg1-v15:~#
+
+root@eltex-practice2-pg1-v15:~# rsync -aH --copy-unsafe-links /etc/ /root/etc_backup
+
+root@eltex-practice2-pg1-v15:~# ls /etc/
+adduser.conf            console-setup         default       groff            iproute2       locale.alias    mime.types      networkd-dispatcher  plymouth    rc5.d          shadow             supercat          update-motd.d
+alternatives            credstore             deluser.conf  group            iscsi          locale.conf     mke2fs.conf     networks             pm          rc6.d          shadow-            sysctl.conf       update-notifier
+apparmor                credstore.encrypted   depmod.d      group-           issue          locale.gen      ModemManager    newt                 polkit-1    rcS.d          shells             sysctl.d          UPower
+apparmor.d              cron.d                dhcp          grub.d           issue.net      localtime       modprobe.d      nftables.conf        pollinate   resolv.conf    skel               sysstat           usb_modeswitch.conf
+apport                  cron.daily            dhcpcd.conf   gshadow          kernel         logcheck        modules         nsswitch.conf        profile     rmt            sos                systemd           usb_modeswitch.d
+apt                     cron.hourly           dpkg          gshadow-         landscape      login.defs      modules-load.d  opt                  profile.d   rpc            ssh                terminfo          vconsole.conf
+bash.bashrc             cron.monthly          e2scrub.conf  gss              ldap           logrotate.conf  motd            os-release           protocols   rsyslog.conf   ssl                thermald          vim
+bash_completion         crontab               environment   hdparm.conf      ld.so.cache    logrotate.d     mtab            overlayroot.conf     python3     rsyslog.d      subgid             timezone          vmware-tools
+bash_completion.d       cron.weekly           ethertypes    host.conf        ld.so.conf     lsb-release     multipath       PackageKit           python3.12  screenrc       subgid-            tmpfiles.d        vtrgb
+bindresvport.blacklist  cron.yearly           fonts         hosts            ld.so.conf.d   lvm             multipath.conf  pam.conf             qemu        security       subuid             ubuntu-advantage  wgetrc
+binfmt.d                cryptsetup-initramfs  fstab         hosts.allow      legal          machine-id      nanorc          pam.d                rc0.d       selinux        subuid-            ucf.conf          X11
+byobu                   crypttab              fuse.conf     hosts.deny       libaudit.conf  magic           needrestart     passwd               rc1.d       sensors3.conf  sudo.conf          udev              xattr.conf
+ca-certificates         dbus-1                fwupd         init.d           libblockdev    magic.mime      netconfig       passwd-              rc2.d       sensors.d      sudoers            udisks2           xdg
+ca-certificates.conf    debconf.conf          gai.conf      initramfs-tools  libibverbs.d   manpath.config  netplan         perl                 rc3.d       services       sudoers.d          ufw               xml
+cloud                   debian_version        gnutls        inputrc          libnl-3        mdadm           network         pki                  rc4.d       sgml           sudo_logsrvd.conf  update-manager    zsh_command_not_found
+
+
+root@eltex-practice2-pg1-v15:~# ls /root/etc_backup/
+adduser.conf            console-setup         default       groff            iproute2       locale.alias    mime.types      networkd-dispatcher  plymouth    rc5.d          shadow             supercat          update-motd.d
+alternatives            credstore             deluser.conf  group            iscsi          locale.conf     mke2fs.conf     networks             pm          rc6.d          shadow-            sysctl.conf       update-notifier
+apparmor                credstore.encrypted   depmod.d      group-           issue          locale.gen      ModemManager    newt                 polkit-1    rcS.d          shells             sysctl.d          UPower
+apparmor.d              cron.d                dhcp          grub.d           issue.net      localtime       modprobe.d      nftables.conf        pollinate   resolv.conf    skel               sysstat           usb_modeswitch.conf
+apport                  cron.daily            dhcpcd.conf   gshadow          kernel         logcheck        modules         nsswitch.conf        profile     rmt            sos                systemd           usb_modeswitch.d
+apt                     cron.hourly           dpkg          gshadow-         landscape      login.defs      modules-load.d  opt                  profile.d   rpc            ssh                terminfo          vconsole.conf
+bash.bashrc             cron.monthly          e2scrub.conf  gss              ldap           logrotate.conf  motd            os-release           protocols   rsyslog.conf   ssl                thermald          vim
+bash_completion         crontab               environment   hdparm.conf      ld.so.cache    logrotate.d     mtab            overlayroot.conf     python3     rsyslog.d      subgid             timezone          vmware-tools
+bash_completion.d       cron.weekly           ethertypes    host.conf        ld.so.conf     lsb-release     multipath       PackageKit           python3.12  screenrc       subgid-            tmpfiles.d        vtrgb
+bindresvport.blacklist  cron.yearly           fonts         hosts            ld.so.conf.d   lvm             multipath.conf  pam.conf             qemu        security       subuid             ubuntu-advantage  wgetrc
+binfmt.d                cryptsetup-initramfs  fstab         hosts.allow      legal          machine-id      nanorc          pam.d                rc0.d       selinux        subuid-            ucf.conf          X11
+byobu                   crypttab              fuse.conf     hosts.deny       libaudit.conf  magic           needrestart     passwd               rc1.d       sensors3.conf  sudo.conf          udev              xattr.conf
+ca-certificates         dbus-1                fwupd         init.d           libblockdev    magic.mime      netconfig       passwd-              rc2.d       sensors.d      sudoers            udisks2           xdg
+ca-certificates.conf    debconf.conf          gai.conf      initramfs-tools  libibverbs.d   manpath.config  netplan         perl                 rc3.d       services       sudoers.d          ufw               xml
+cloud                   debian_version        gnutls        inputrc          libnl-3        mdadm           network         pki                  rc4.d       sgml           sudo_logsrvd.conf  update-manager    zsh_command_not_found
+
+
+root@eltex-practice2-pg1-v15:~# ls
+EltexCourse26  EltexCourse26_clone  etc_backup
+root@eltex-practice2-pg1-v15:~# tar -cf archive.tar etc_backup/
+root@eltex-practice2-pg1-v15:~# tar -czf archive.tar.gz etc_backup/
+root@eltex-practice2-pg1-v15:~# tar -cjf archive.tar.bzip2 etc_backup/
+root@eltex-practice2-pg1-v15:~# 7z a archive.7z etc_backup/
+root@eltex-practice2-pg1-v15:~# du -sh ./etc_backup
+42M     ./etc_backup
+root@eltex-practice2-pg1-v15:~# du -sh ./archive.*
+4.5M    ./archive.7z
+38M     ./archive.tar
+17M     ./archive.tar.bzip2
+18M     ./archive.tar.gz
+
+7zip создал архив наименьшего размера
+
+
+root@eltex-practice2-pg1-v15:~# rsync -au /etc/ /root/etc_backup/
+root@eltex-practice2-pg1-v15:~# cat /root/etc_backup/motd
+Приветственное сообщение дня!
+Автор: Болдырев Денис
+Текущая дата и время: Mon May 11 10:29:25 AM UTC 2026
+ 
+root@eltex-practice2-pg1-v15:~# tar -uf archive.tar.gz /root/etc_backup/motd
+tar: Cannot update compressed archives
+tar: Error is not recoverable: exiting now
+root@eltex-practice2-pg1-v15:~# tar -czf motd.tar.gz etc_backup/motd
+root@eltex-practice2-pg1-v15:~# du -sh ./motd.tar.gz
+4.0K    ./motd.tar.gz
+
+root@eltex-practice2-pg1-v15:~# tar -df archive.tar.bzip2 -C /root/etc_backup
+tar: etc_backup/default/motd-news: Warning: Cannot stat: No such file or directory
+tar: etc_backup/default/grub.ucf-dist: Warning: Cannot stat: No such file or directory
+tar: etc_backup/default/locale: Warning: Cannot readlink: No such file or directory
+tar: etc_backup/default/console-setup: Warning: Cannot stat: No such file or directory
+...
+
+
+root@eltex-practice2-pg1-v15:~# mkdir etc_backup_gzip
+root@eltex-practice2-pg1-v15:~# tar -xf archive.tar.gz -C /root/etc_backup_gzip
+root@eltex-practice2-pg1-v15:~# diff /etc/motd /root/etc_backup_gzip/etc_backup/motd
+2,3c2
+< Автор: Болдырев Денис
+< Текущая дата и время: Mon May 11 10:29:25 AM UTC 2026
+---
+> Автор: Болдырев Денис.
+root@eltex-practice2-pg1-v15:~# 7z x archive.7z -o/root/etc_backup_7zip/
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024
+
+Scanning the drive for archives:
+1 file, 4637472 bytes (4529 KiB)
+
+Extracting archive: archive.7z
+--
+Path = archive.7z
+Type = 7z
+Physical Size = 4637472
+Headers Size = 20967
+Method = LZMA2:24 BCJ
+Solid = +
+Blocks = 2
+
+Everything is Ok
+
+Folders: 244
+Files: 1510
+Size:       38703069
+Compressed: 4637472
+root@eltex-practice2-pg1-v15:~# diff /etc/motd /root/etc_backup_7zip/etc_backup/motd
+2,3c2
+< Автор: Болдырев Денис
+< Текущая дата и время: Mon May 11 10:29:25 AM UTC 2026
+---
+> Автор: Болдырев Денис.
