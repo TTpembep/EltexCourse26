@@ -11,5 +11,6 @@
 *.a
 *.lib
 *.txt
+*.zip
 main
 !Makefile
