@@ -4,7 +4,11 @@
 #include <linux/sched.h>
 #include <linux/uaccess.h>
 #include <linux/slab.h>
- 
+
+#define FILE_NAME "hello"
+#define MAGIC_NUM 10
+#define MODE 0
+
 ssize_t read_proc(struct file *filp, char *buf, size_t count, loff_t *offp );
 ssize_t write_proc(struct file *filp, const char *buf, size_t count, loff_t *offp);
 void create_new_proc_entry(void);
@@ -38,8 +42,8 @@ static const struct proc_ops proc_fops = {
 };
  
 void create_new_proc_entry(void) { //use of void for no arguments is compulsory now
-    proc_create("proc", 0, NULL, &proc_fops);
-    msg = kmalloc(10 * sizeof(char), GFP_KERNEL);
+    proc_create(FILE_NAME, MODE, NULL, &proc_fops);
+    msg = kmalloc(MAGIC_NUM * sizeof(char), GFP_KERNEL);
 }
 
 int proc_init (void) {
@@ -48,7 +52,7 @@ int proc_init (void) {
 }
  
 void proc_cleanup(void) {
-    remove_proc_entry("hello", NULL);
+    remove_proc_entry(FILE_NAME, NULL);
     kfree(msg);
 }
  

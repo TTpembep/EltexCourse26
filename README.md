@@ -45,7 +45,7 @@
 	Task 5 - Untracked ⏰
 ## Module 5
 	Task 1 - Done ✅
-	Task 2 - In progress 📋
-	Task 3 - Untracked ⏰
+	Task 2 - Done ✅
+	Task 3 - Done ✅
 	Task 4 - Untracked ⏰
 	Task 5 - Untracked ⏰
