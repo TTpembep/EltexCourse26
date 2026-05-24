@@ -6,7 +6,7 @@
 ## Module 2
 	Task 2.1 - In progress 📋
 	Task 2.2 - Done ✅
-	Task 2.3 - Untracked ⏰
+	Task 2.3 - Done ✅
 	
 	Task 3.1 - Untracked ⏰
 	Task 3.2 - Untracked ⏰
