@@ -1,7 +1,7 @@
 # Repo for tracking course complition
 ## Module 1
 	Task 1 - Done ✅
-	Task 2 - In progress 📋
+	Task 2 - Done ✅
 	Task 3 - Untracked ⏰
 ## Module 2
 	Task 2.1 - In progress 📋
@@ -39,7 +39,7 @@
 	Cross-task 2 - Untracked ⏰
 ## Module 4
 	Task 1 - Done ✅
-	Task 2 - Untracked ⏰
+	Task 2 - Done ✅
 	Task 3 - Untracked ⏰
 	Task 4 - Untracked ⏰
 	Task 5 - Untracked ⏰
