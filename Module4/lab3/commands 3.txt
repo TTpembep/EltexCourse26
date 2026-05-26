@@ -1,0 +1,41 @@
+Команды которые были в том или ином виде использованы при выполнении работы (составлял для себя шпаргалку):
+enable
+configure terminal
+no vlan 100,200,300
+vlan 20,333
+interface GigabitEthernet 1/0
+swtichport mode access
+switchport access vlan 20		
+exit
+interface GigabitEthernet 1/0
+swtichport mode access
+switchport access vlan 333	
+exit
+end
+
+interface GigabitEthernet 0/2
+switchport trunk encapsulation dot1q
+swtichport mode trunk
+switchport trunk allowed vlan 20
+
+
+
+
+interface GigabitEthernet 1/1
+switchport trunk encapsulation dot1q
+swtichport mode trunk
+switchport trunk native vlan 333
+
+
+interface GigabitEthernet 0/1
+switchport trunk allowed vlan remove 20
+exit
+end
+wr
+show vlan
+
+
+
+
+switchport trunk encapsulation isl
+

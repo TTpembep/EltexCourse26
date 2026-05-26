@@ -1,0 +1,45 @@
+Команды которые были в том или ином виде использованы при выполнении работы (составлял для себя шпаргалку):
+
+R2
+conf t
+int f0/0
+no shutdown
+ip address 10.1.1.2 255.255.255.0
+exit
+
+ip dhcp excluded-address 192.168.1.1
+ip dhcp excluded-address 192.168.2.1
+
+ip dhcp pool LAN1
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+exit
+
+ip dhcp pool LAN2
+network 192.168.2.0 255.255.255.0
+default-router 192.168.2.1
+lease 0 0 7
+exit
+end
+
+R1
+conf t
+interface f0/0
+ip address 192.168.1.1
+no shutdown
+ip helper-address 10.1.1.2
+
+interface f2/0
+ip address 192.168.2.1
+no shutdown
+ip helper-address 10.1.1.2
+
+int f1/0
+ip address 10.1.1.1 255.255.0
+no shutdown
+
+FOR R2 AND R1
+router eigrp 2
+network 192.168.1.0 255.255.255.0
+network 192.168.2.0 255.255.255.0
+network 10.1.1.0 255.255.255.0
