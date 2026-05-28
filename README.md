@@ -17,7 +17,7 @@
 	
 	Task 6.1 - Done ✅
 	Task 6.2 - Done ✅
-	Task 6.3 - Untracked ⏰
+	Task 6.3 - Done ✅
 ## Module 3
 	Task 1 - Done ✅
 	Task 2 - Done ✅
