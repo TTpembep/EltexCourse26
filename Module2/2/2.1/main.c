@@ -1,60 +1,58 @@
-#include <stdio.h>
 #include "phonebook.h"
 
 int main(){
-    printf("-= Welcome to PhoneBook console =-\n");
+    int size = 10;   //Значение максимального количества записей в книге
+    contact *phonebook = calloc(size, sizeof(contact));  //Выделение памяти
+    if (phonebook == NULL){ //Обработка ошибки выделения памяти
+        printf("Memory allocation error\n");
+        return 1;
+    }
+    int option = 1; //Переменная для switch-case
 
-    Contact phonebook[10], *ptr;
-
-    int index = 0;
-    short option = 1;
-    short result;
     while (option !=0){
-
-        //Прежде чем назначать новый индекс нужно проверить что массив не переполнен, если что его перевыделить память
-        ptr = &phonebook[index];
-
-        printf("Choose an option:\n");
+        printf("-= PhoneBook console =-\n");
         printf("1. Add contact\n2. Edit contact\n3. Delete contact\n4. Print phonebook\n0. Exit\n");
+        printf("Enter option: ");
 
-        scanf("%hd", &option); //Раньше здесь был %d и из-за этого затирался первый номер в структуре
+        scanf("%d", &option);
         while(getchar() != '\n');   //Очистка буфера потока ввода после scanf
 
         switch(option)
         {
-            case 1:
-                result = addContact(ptr);
-                if (result == 0) {
-                    //printf("Debug phone: %s \n", ptr->phoneNumber);
-                    //printf("Debug name: %s \n", ptr->name);
-                    //printf("Debug surname: %s \n", ptr->surname);
-                    //printf("Debug job: %s \n", ptr->job);
-                    //printf("Debug email: %s \n", ptr->email);
-                    index++;
-                    printf("Operation done successfully!\n");
+            case 1: //Добавление контакта
+                size = addMenu(&phonebook, size);
+
+                if (size == -1) {
+                    printf("Memory reallocation error\n");
+                    free(phonebook);    //Освобождение памяти "на всякий случай"
+                    return 1;   //Завершение программы
                 }
-                else {printf("Someting went wrong.\n");}
-                
+                printf("Operation done successfully!\n");
                 break;
-            case 2:
-                result = editContact();
-                if (result == 0) {printf("Operation done successfully!\n");}
-                else {printf("Someting went wrong.\n");}
+
+            case 2: //Изменение контакта
+                editContact(&phonebook[0], size);
+                //printf("Operation done successfully!\n");
                 break;
-            case 3:
-                result = deleteContact();
-                if (result == 0) {printf("Operation done successfully!\n");}
-                else {printf("Someting went wrong.\n");}
+
+            case 3: //Удаление контакта
+                deleteMenu(&phonebook[0], size);
+                printf("Operation done successfully!\n");
                 break;
-            case 4:
-                result = printPhonebook(&phonebook[0], index);
-                //result = printContact(phonebook[index]);
-                if (result == 0) {printf("Operation done successfully!\n");}
-                else {printf("Someting went wrong.\n");}
+
+            case 4: //Вывод всех контактов
+                printPhonebook(&phonebook[0], size);
                 break;
-            default:
+            
+            case 0: //Завершение программы
                 option = 0;
+                break;
+            
+            default:    //Обработка ввода значений
+                printf("Wrong option, try again.\n");
+                break;
         }
     }
+    free (phonebook);   //Освобождение памяти
     return 0;
 }
