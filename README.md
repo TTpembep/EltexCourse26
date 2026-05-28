@@ -15,7 +15,7 @@
 	Task 4.2 - Untracked ⏰
 	Task 4.3 - Untracked ⏰
 	
-	Task 6.1 - Untracked ⏰
+	Task 6.1 - Done ✅
 	Task 6.2 - Untracked ⏰
 	Task 6.3 - Untracked ⏰
 ## Module 3
