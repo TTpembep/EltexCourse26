@@ -12,7 +12,7 @@
 	Task 3.2 - Untracked ⏰
 	
 	Task 4.1 - Done ✅
-	Task 4.2 - Untracked ⏰
+	Task 4.2 - Done ✅
 	Task 4.3 - Untracked ⏰
 	
 	Task 6.1 - Done ✅
