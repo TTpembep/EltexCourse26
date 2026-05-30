@@ -25,7 +25,7 @@
 	Task 4 - In progress 📋
 	Task 5 - Done ✅
 	Task 6 - Done ✅
-	Task 7 - Untracked ⏰
+	Task 7 - Done ✅
 	Task 8 - Untracked ⏰
 	Task 9 - Untracked ⏰
 	Task 10 - Untracked ⏰
