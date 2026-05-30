@@ -27,7 +27,7 @@
 	Task 6 - Done ✅
 	Task 7 - Done ✅
 	Task 8 - Done ✅
-	Task 9 - Untracked ⏰
+	Task 9 - Done ✅
 	Task 10 - Untracked ⏰
 	Task 11 - Untracked ⏰
 	Task 12 - Untracked ⏰
