@@ -14,7 +14,7 @@
 #define MAX_LEN   128   //Максимальная длина строки
 
 static int stop = 0;
-void handler(int sig) { stop = 1; }
+void listener(int sig) { stop = 1; }
 
 void producer(sem_t *sem) {
     srand(time(NULL) ^ getpid());   //Задание начальной точки генератора чисел
@@ -90,7 +90,7 @@ void consumer(sem_t *sem) {
 }
 
 int main() {
-    signal(SIGINT, handler);    //Обработка сигнала прерывания ^C
+    signal(SIGINT, listener);    //Обработка сигнала прерывания ^C
     FILE *fd = fopen(FILENAME, "a");    //Открытие файла, чтобы создать если его до этого не было
     if (fd == NULL){
         perror("fopen");
