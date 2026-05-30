@@ -60,8 +60,8 @@ int main(int argc, char *argv[]) {
             }
             char temp[MAX_LEN];
             strcpy(temp, lines[i] + 2);
-            int min = -1;   //Минимальные и максимальные значения для сравнения
-            int max = 101;
+            int min = 101;   //Минимальные и максимальные значения для сравнения
+            int max = -1;
             char *token = strtok(temp, " \n");
             while (token){  //Нахождение минимального и максимального значения в строке
                 int value = atoi(token);
