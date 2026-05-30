@@ -1,16 +1,10 @@
-all: producer consumer
+all: main
 
-producer: producer.o
-	gcc producer.o -o producer -lrt
+main: main.o
+	gcc main.o -o main -lrt
 
-producer.o: producer.c
-	gcc -c producer.c
-
-consumer: consumer.o
-	gcc consumer.o -o consumer	-lrt
-
-consumer.o: consumer.c
-	gcc -c consumer.c
+main.o: main.c
+	gcc -c main.c
 
 clean:
-	rm *.o *.txt producer consumer
+	rm *.o *.txt main
