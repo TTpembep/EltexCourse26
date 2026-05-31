@@ -30,7 +30,7 @@
 	Task 9 - Done ✅
 	Task 10 - Done ✅
 	Task 11 - Done ✅
-	Task 12 - Untracked ⏰
+	Task 12 - Done ✅
 	Task 13 - Untracked ⏰
 	Task 14 - Untracked ⏰
 	Task 15 - Untracked ⏰
