@@ -35,7 +35,7 @@
 	Task 14 - Done ✅
 	Task 15 - Untracked ⏰
 	
-	Cross-task 1 - Untracked ⏰
+	Cross-task 1 - Done ✅
 	Cross-task 2 - Untracked ⏰
 ## Module 4
 	Task 1 - Done ✅
