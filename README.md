@@ -32,7 +32,7 @@
 	Task 11 - Done ✅
 	Task 12 - Done ✅
 	Task 13 - Untracked ⏰
-	Task 14 - Untracked ⏰
+	Task 14 - Done ✅
 	Task 15 - Untracked ⏰
 	
 	Cross-task 1 - Untracked ⏰
